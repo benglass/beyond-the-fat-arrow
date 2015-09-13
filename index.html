@@ -152,8 +152,8 @@ li::before {
                     <ul>
                         <li class="fragment">What is ES6</li>
                         <li class="fragment">Browser Support & Tooling</li>
-                        <li class="fragment">Functions</li>
                         <li class="fragment">Variables</li>
+                        <li class="fragment">Functions</li>
                         <li class="fragment">Objects</li>
                         <li class="fragment">Strings</li>
                         <li class="fragment">Classes</li>
@@ -330,6 +330,55 @@ $ babel script.js --watch --out-file script-compiled.js
                 </section>
 
                 <section data-state="functions-intro">
+                    <h2><strong>ES6</strong> Variables</h2>
+                    <p>The trouble with <strong><code>var</code></strong></p>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2>Block scoping with <strong><code>let</code></strong></h2>
+                    <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var hat = 'bowler';
+for (var i = 0; i < 4; i++) {
+    var hat = 'colander';
+}
+console.log(hat); // 'colander'
+console.log(i); // 3
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let hat = 'bowler';
+for (let i = 0; i < 4; i++) {
+    let hat = 'colander';
+}
+console.log(hat); // 'bowler'
+console.log(i); // undefined
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2>Colliding variables with <strong><code>let</code></strong></h2>
+                    <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var hat = 'bowler';
+// do something
+var hat = 'colander';
+console.log(hat); // 'colander'
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let hat = 'bowler';
+// do something
+let hat = 'colander'; 
+// Error: Duplicate declaration
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section data-state="functions-intro">
                     <h2><strong>ES6</strong> Functions</h2>
                     <img src="img/fgx.jpg" />
                 </section>
@@ -451,6 +500,10 @@ var items = [
 items.map(obj => obj.id);
                     </code></pre>
                     </div>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2>Default Parameters</h2>
                 </section>
 
 				<!-- Example of nested vertical slides -->
