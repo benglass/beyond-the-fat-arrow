@@ -586,6 +586,30 @@ let hat = {
                     </div>
                 </section>
 
+                <section>
+                    <h2>Object Method Initialization</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var type = 'bowler';
+var hat = {
+    type: type,
+    doff: function() {
+        console.log('I doff my '+this.type);
+    }
+};
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let type = 'bowler';
+let hat = { 
+    type,
+    doff() {
+        console.log('I doff my '+this.type);
+    }
+};
+                    </code></pre>
+                </section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
