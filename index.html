@@ -92,12 +92,27 @@ li::before {
     background: #f5da55;
 
 }
+.reveal .twocol {
+    position: relative;
+    overflow: hidden;
+}
 .reveal .twocol > * {
     float: left; 
     width: 45%;
     margin-right: 10%;
 }
 .reveal .twocol > *:last-child { margin-right: 0; }
+.twocol::after {
+    font-family: FontAwesome;
+    content: "\f061";
+    opacity: 0.2;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -388,16 +403,16 @@ var app = {
                 <section data-state="functions-intro">
                     <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
                     <div class="twocol">
-                    <pre><code data-trim contenteditable class="javascript">
-// ES6
-var add = (x, y) => {
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var add = function(x, y) {
     return x + y;
 }
 console.log(add(4, 5)); // 9
                     </code></pre>
-					<pre class="fragment"><code data-trim contenteditable class="javascript">
-// ES5
-var add = function(x, y) {
+                    <pre class="fragment"><code data-trim contenteditable class="javascript">
+// ES6
+var add = (x, y) => {
     return x + y;
 }
 console.log(add(4, 5)); // 9
@@ -408,16 +423,16 @@ console.log(add(4, 5)); // 9
                 <section data-state="functions-intro">
                     <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
                     <div class="twocol">
-                    <pre><code data-trim contenteditable class="javascript">
-// ES6
-var add = (x, y) => {
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var add = function(x, y) {
     return x + y;
 }
 console.log(add(4, 5)); // 9
                     </code></pre>
-					<pre class="fragment"><code data-trim contenteditable class="javascript">
-// ES5
-var add = function(x, y) {
+                    <pre class="fragment"><code data-trim contenteditable class="javascript">
+// ES6
+var add = (x, y) => {
     return x + y;
 }
 console.log(add(4, 5)); // 9
@@ -428,18 +443,18 @@ console.log(add(4, 5)); // 9
                 <section data-state="functions-intro">
                     <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
                     <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var add = function(x, y) {
+    return x + y;
+}
+console.log(add(4, 5)); // 9
+                    </code></pre>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
 var add = (x, y) => x + y;
 console.log(add(4, 5)); // 9
                     </code></pre>
-					<pre><code data-trim contenteditable class="javascript">
-// ES5
-var add = function(x, y) {
-    return x + y;
-}
-console.log(add(4, 5)); // 9
-                    </code></pre>
                     </div>
                 </section>
 
@@ -447,14 +462,14 @@ console.log(add(4, 5)); // 9
                     <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
                     <div class="twocol">
 					<pre><code data-trim contenteditable class="javascript">
-// ES6
-[1, 2, 3].map(num => num * 2);
-                    </code></pre>
-					<pre class="fragment"><code data-trim contenteditable class="javascript">
 // ES5
 [1, 2, 3].map(function(num) {
     return num * 2;
 });
+                    </code></pre>
+					<pre class="fragment"><code data-trim contenteditable class="javascript">
+// ES6
+[1, 2, 3].map(num => num * 2);
                     </code></pre>
                     </div>
                 </section>
