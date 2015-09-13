@@ -568,6 +568,7 @@ function join(separator = '-', ...parts) {
                     <h2>Object Property Initialization</h2>
                     <div class="twocol">
 					<pre><code data-trim contenteditable class="javascript">
+// ES5
 var type = 'bowler';
 var hat = {
     id: uuid(),
@@ -575,10 +576,11 @@ var hat = {
 };
                     </code></pre>
 					<pre><code data-trim contenteditable class="javascript">
+// ES6
 let type = 'bowler';
 let hat = { 
-    type, 
-    id: uuid()
+    id: uuid(),
+    type
 };
                     </code></pre>
                     </div>
