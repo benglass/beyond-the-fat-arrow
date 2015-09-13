@@ -402,42 +402,7 @@ var app = {
 
                 <section data-state="functions-intro">
                     <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
-                    <div class="twocol">
-					<pre><code data-trim contenteditable class="javascript">
-// ES5
-var add = function(x, y) {
-    return x + y;
-}
-console.log(add(4, 5)); // 9
-                    </code></pre>
-                    <pre class="fragment"><code data-trim contenteditable class="javascript">
-// ES6
-var add = (x, y) => {
-    return x + y;
-}
-console.log(add(4, 5)); // 9
-                    </code></pre>
-                    </div>
-                </section>
-
-                <section data-state="functions-intro">
-                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
-                    <div class="twocol">
-					<pre><code data-trim contenteditable class="javascript">
-// ES5
-var add = function(x, y) {
-    return x + y;
-}
-console.log(add(4, 5)); // 9
-                    </code></pre>
-                    <pre class="fragment"><code data-trim contenteditable class="javascript">
-// ES6
-var add = (x, y) => {
-    return x + y;
-}
-console.log(add(4, 5)); // 9
-                    </code></pre>
-                    </div>
+                    <p>Terse syntax for anonymous functions</p>
                 </section>
 
                 <section data-state="functions-intro">
@@ -463,13 +428,27 @@ console.log(add(4, 5)); // 9
                     <div class="twocol">
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
-[1, 2, 3].map(function(num) {
-    return num * 2;
+[1, 2, 3].filter(function(num) {
+    return num > 2;
+});
+
+var items = [
+    { id: 5, name: 'foo' }, 
+    { id: 6, name: 'bar' }
+];
+items.map(function(obj) {
+    return obj.id;
 });
                     </code></pre>
 					<pre class="fragment"><code data-trim contenteditable class="javascript">
 // ES6
-[1, 2, 3].map(num => num * 2);
+[1, 2, 3].filter(num => num > 2);
+
+var items = [
+    { id: 5, name: 'foo' }, 
+    { id: 6, name: 'bar' }
+];
+items.map(obj => obj.id);
                     </code></pre>
                     </div>
                 </section>
