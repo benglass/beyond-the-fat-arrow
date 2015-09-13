@@ -670,23 +670,32 @@ const { type, size = 'M', ...other } = hat;
                 </section>
 
                 <section>
-                    <h2>Object.assign<br />& Spread Properties</h2>
-                    <p>Native $.extends()</p>
-                </section>
-
-                <section>
                     <h2>Object.assign</h2>
+                    <p>Native $.extends</p>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
 let hat = { 
     id: 5,
     type: 'bowler'
 };
-let yourHat = Object.assign({}, hat);
-// hat = { id: 5, type: 'bowler' }
+let yourHat = Object.assign({}, hat, { id: 6 });
+// hat = { id: 6, type: 'bowler' }
                     </code></pre>
                 </section>
 
+                <section>
+                    <h2><strong>ES7</strong> Spread Properties</h2>
+                    <p>Sugar for Object.assign</p>
+					<pre><code data-trim contenteditable class="javascript">
+// ES7
+let hat = { 
+    id: 5,
+    type: 'bowler'
+};
+let yourHat = { ...hat, id: 6 };
+// hat = { id: 6, type: 'bowler' }
+                    </code></pre>
+                </section>
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
