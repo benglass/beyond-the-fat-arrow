@@ -13,6 +13,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
@@ -60,8 +61,17 @@ strong { color: #42affa; }
     height: 100vh;
     width: 100%;
 }
+ul, li { list-style: none; }
+li::before {
+    list-style: none;
+    font-family: FontAwesome;
+    color: #333;
+    content: '\f061';
+    display: inline-block;
+    margin-right: 0.25em;
+}
 .reveal .slides section .fragment.visible { opacity: 0.5; }
-.reveal .slides section .current-fragment.visible { opacity: 1; }
+.reveal .slides section .current-fragment.visible { color: #42affa; opacity: 1; }
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -93,13 +103,21 @@ strong { color: #42affa; }
 				</section>
 
 				<section data-state="use-right-now">
-                    <h2 style="color: #fff; text-shadow: 6px 6px 0 #000, -6px -6px 0 #42affa, -6px 6px 0 #fff, 6px -6px 0 #000, 6px 0px 0 #fff, 0 6px #42affa">The Future is Now</h2>
+                    <h2 style="font-size: 250%; line-height: 1em; text-align: left; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #fff; color: transparent;">
+                        The<br />Future<br />is<br />Now
+                        <br />
+                        <small style="font-size: 50%; -webkit-text-stroke-width: 1px;">Nam<br />June<br />Paik</small>
+                    </h2>
 				</section>
 
 				<section>
-					<h2>The Future is Now</h2>
+                    <h2>Use <strong>ES6</strong> Today</h2>
+                </section>
+
+				<section>
+					<h2>Use <strong>ES6</strong> Today</h2>
                     <ul>
-                        <li class="fragment">What is ES6?</li>
+                        <li class="fragment">What is ES6</li>
                         <li class="fragment">Tooling & Browser Support</li>
                         <li class="fragment">Functions</li>
                         <li class="fragment">Variables</li>
