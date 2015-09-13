@@ -713,6 +713,31 @@ let yourHat = { ...hat, id: 6 };
                     </code></pre>
                 </section>
 
+                <section>
+                    <h2>Template Strings</h2>
+                    <p>Variable interpolation, multi-line strings & more</p>
+                </section>
+
+                <section>
+                    <h2>Variable Interpolation</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var hat = {
+    type: 'colander'
+};
+console.log(['I doff my ', hat.type, ' to you'].join(''));
+// 'I doff my colander to you
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+var hat = {
+    type: 'colander'
+};
+console.log(`I doff my ${hat.type} to you`);
+// I doff my colander to you
+                    </code></pre>
+                </section>
+
 				<section id="themes">
 					<h2>Themes</h2>
 					<p>
