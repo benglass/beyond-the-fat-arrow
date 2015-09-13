@@ -46,6 +46,8 @@ strong { color: #42affa; }
 .intro .present, .intro .present * {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
 }
+.reveal .slides section .fragment.visible { opacity: 0.5; }
+.reveal .slides section .current-fragment.visible { opacity: 1; }
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -77,10 +79,20 @@ strong { color: #42affa; }
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<h2>Use ES6 Right Now</h2>
+				</section>
+
+				<section>
+					<h2>Use ES6 Right Now</h2>
+                    <ul>
+                        <li class="fragment">What is ES6</li>
+                        <li class="fragment">Usage</li>
+                        <li class="fragment">Functions</li>
+                        <li class="fragment">Variables</li>
+                        <li class="fragment">Objects</li>
+                        <li class="fragment">Strings</li>
+                        <li class="fragment">Classes</li>
+                    </ul>
 				</section>
 
 				<!-- Example of nested vertical slides -->
