@@ -87,6 +87,11 @@ li::before {
     width: 100%;
     line-height: 1em;
 }
+.reveal section img { border: 0; background: none; box-shadow: none; }
+.reveal .babel-logo {
+    background: #f5da55;
+
+}
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -270,6 +275,37 @@ li::before {
                         </ul>
                         <p><small><a href="http://kangax.github.io/compat-table/es5/" target="_blank">Full compatibility table</a></small></p>
                     </div>
+                </section>
+
+                <section>
+                    <a href="https://babeljs.io/" target="_blank">
+                        <img src="img/babel-logo.svg" width="80%" alt="Babel" class="babel-logo" />
+                    </a>
+                    <p class="fragment">You put Javascript in&nbsp;&nbsp;&nbsp;<br />
+                    You get Javascript out</p>
+                </section>
+
+                <section>
+                    <h2>Babel Usage: CLI</h2>
+					<pre><code data-trim contenteditable class="bash">
+$ npm install --global babel
+$ babel script.js --watch --out-file script-compiled.js
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Babel Usage: Build Tools</h2>
+                    <p>Babel integrates with your build tool of choice</p>
+                    <ul>
+                        <li>Browserify</li>
+                        <li>Webpack</li>
+                        <li>Grunt</li>
+                        <li>Gulp</li>
+                        <li>jspm</li>
+                        <li>RequireJS</li>
+                        <li>& more</li>
+                    </ul>
+                    <p><small><a href="https://babeljs.io/docs/setup/">Full setup documentation</a></small></p>
                 </section>
 
 				<!-- Example of nested vertical slides -->
