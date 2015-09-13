@@ -529,6 +529,33 @@ function join(parts, separator = '-') {
                     </code></pre>
                 </section>
 
+                <section data-state="functions-intro">
+                    <h2><strong>ES5</strong> Variadic Functions</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+function join(/* separator, part1, part2, partN */) {
+    if (arguments.length < 2) {
+        throw new Error('BAD INPUT');
+    }
+    var separator = arguments[0] || '-';
+    var parts = Array.prototype.slice.call(arguments, 1);
+    return parts.join(separator);
+}
+                    </code></pre>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><strong>ES6</strong> Variadic Functions<br />
+                    <small>using <strong>rest parameters</strong></small></h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+function join(separator = '-', ...parts) {
+    return parts.join(separator);
+}
+                    </code></pre>
+                </section>
+
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
