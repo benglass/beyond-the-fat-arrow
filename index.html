@@ -6,8 +6,7 @@
 
 		<title>reveal.js - The HTML Presentation Framework</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Ben Glassman">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -29,6 +28,20 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+<style>
+.intro body::after {
+    content: '';
+    background-image: url(img/colander-hats.png);
+    background-size: contain;
+    opacity: 0.05;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
+</style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -40,12 +53,17 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+				<section data-state="intro">
+					<h1>The Future is Now</h1>
+                    <h3>Using ES6 in Your<br />Javascript Code Today</h3>
+                    <div style="text-align: right; padding-top: 1em;">
+                        <h4 style="margin-bottom: 0">Ben Glassman</h4>
+                        <p style="margin: 0;">
+                            <small>Director of Development, <a href="http://vtdesignworks.com">Vermont Design Works</a>*<br />
+                            Adjunct Professor, <a href="http://champlain.edu">Champlain College</a><br />
+                            Beer Geek, <a href="http://www.winooskivt.org/">City of Winooski</a></small>
+                        </p>
+                    </div>
 				</section>
 
 				<section>
