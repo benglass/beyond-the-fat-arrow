@@ -30,7 +30,7 @@
 		</script>
 
 <style>
-strong { color: #42affa; }
+strong, .highlight { color: #42affa; }
 .lowlight { opacity: 0.5; }
 .intro body::after {
     content: '';
@@ -92,6 +92,12 @@ li::before {
     background: #f5da55;
 
 }
+.reveal .twocol > * {
+    float: left; 
+    width: 45%;
+    margin-right: 10%;
+}
+.reveal .twocol > *:last-child { margin-right: 0; }
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -309,8 +315,148 @@ $ babel script.js --watch --out-file script-compiled.js
                 </section>
 
                 <section data-state="functions-intro">
-                    <h2>Functions in <strong>ES6</strong></h2>
+                    <h2><strong>ES6</strong> Functions</h2>
                     <img src="img/fgx.jpg" />
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+                    <p>Provides lexical (i.e. expected) value for the <strong><code>this</code></strong> variable.</p>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var app = {
+    confirmText: 'Are you sure?', 
+    init: function() {
+        var _this = this; // Grrr!
+        var handleConfirm = function(e) {
+            e.preventDefault();
+            var confirmed = confirm(_this.confirmText);
+            if (confirmed) {
+                window.location.href = e.target.href;
+            }
+        };
+        $('a.confirm').click(handleConfirm);
+    },
+}
+                    </code></pre>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var app = {
+    confirmText: 'Are you sure?', 
+    init: function() {
+        var handleConfirm = function(e) {
+            e.preventDefault();
+            var confirmed = confirm(_this.confirmText);
+            if (confirmed) {
+                window.location.href = e.target.href;
+            }
+        }.bind(this); // Gnash!
+        $('a.confirm').click(handleConfirm);
+    },
+}
+                    </code></pre>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+var app = {
+    confirmText: 'Are you sure?', 
+    init: function() {
+        var handleConfirm = (e) => {
+            e.preventDefault();
+            var confirmed = confirm(this.confirmText);
+            if (confirmed) {
+                window.location.href = e.target.href;
+            }
+        };
+        $('a.confirm').click(handleConfirm);
+    },
+}
+                    </code></pre>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+                    <div class="twocol">
+                    <pre><code data-trim contenteditable class="javascript">
+// ES6
+var add = (x, y) => {
+    return x + y;
+}
+console.log(add(4, 5)); // 9
+                    </code></pre>
+					<pre class="fragment"><code data-trim contenteditable class="javascript">
+// ES5
+var add = function(x, y) {
+    return x + y;
+}
+console.log(add(4, 5)); // 9
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+                    <div class="twocol">
+                    <pre><code data-trim contenteditable class="javascript">
+// ES6
+var add = (x, y) => {
+    return x + y;
+}
+console.log(add(4, 5)); // 9
+                    </code></pre>
+					<pre class="fragment"><code data-trim contenteditable class="javascript">
+// ES5
+var add = function(x, y) {
+    return x + y;
+}
+console.log(add(4, 5)); // 9
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+                    <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+var add = (x, y) => x + y;
+console.log(add(4, 5)); // 9
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var add = function(x, y) {
+    return x + y;
+}
+console.log(add(4, 5)); // 9
+                    </code></pre>
+                    </div>
+                </section>
+
+                <section data-state="functions-intro">
+                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
+                    <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+[1, 2, 3].map(num => num * 2);
+                    </code></pre>
+					<pre class="fragment"><code data-trim contenteditable class="javascript">
+// ES5
+[1, 2, 3].map(function(num) {
+    return num * 2;
+});
+                    </code></pre>
+                    </div>
                 </section>
 
 				<!-- Example of nested vertical slides -->
