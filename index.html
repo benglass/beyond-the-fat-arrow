@@ -571,7 +571,7 @@ function join(separator = '-', ...parts) {
 // ES5
 var type = 'bowler';
 var hat = {
-    id: uuid(),
+    id: 5,
     type: type
 };
                     </code></pre>
@@ -579,7 +579,7 @@ var hat = {
 // ES6
 let type = 'bowler';
 let hat = { 
-    id: uuid(),
+    id: 5,
     type
 };
                     </code></pre>
@@ -593,6 +593,7 @@ let hat = {
 var type = 'bowler';
 var hat = {
     type: type,
+    id: 5,
     doff: function() {
         console.log('I doff my '+this.type);
     }
@@ -603,6 +604,7 @@ var hat = {
 let type = 'bowler';
 let hat = { 
     type,
+    id: 5,
     doff() {
         console.log('I doff my '+this.type);
     }
@@ -615,6 +617,7 @@ let hat = {
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
 var hat = {
+    id: 5,
     type: 'bowler'
 };
 var type = hat.type;
@@ -622,6 +625,7 @@ var type = hat.type;
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
 let hat = { 
+    id: 5,
     type: 'bowler'
 };
 const { type } = hat;
@@ -629,10 +633,11 @@ const { type } = hat;
                 </section>
 
                 <section>
-                    <h2>Destructuring with Defaults</h2>
+                    <h2>Object Destructuring<br /><small>with Defaults</small></h2>
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
 var hat = {
+    id: 5,
     type: 'bowler'
 };
 var type = hat.type;
@@ -641,9 +646,44 @@ var size = hat.size || 'M';
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
 let hat = { 
+    id: 5,
     type: 'bowler'
 };
 const { type, size = 'M' } = hat;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Object Destructuring<br /><small>with Defaults & Rest Properties</small></h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5: ?!?!?
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let hat = { 
+    id: 5,
+    type: 'bowler'
+};
+const { type, size = 'M', ...other } = hat;
+// other = { id: 5 }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Object.assign<br />& Spread Properties</h2>
+                    <p>Native $.extends()</p>
+                </section>
+
+                <section>
+                    <h2>Object.assign</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let hat = { 
+    id: 5,
+    type: 'bowler'
+};
+let yourHat = Object.assign({}, hat);
+// hat = { id: 5, type: 'bowler' }
                     </code></pre>
                 </section>
 
