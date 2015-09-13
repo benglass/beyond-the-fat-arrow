@@ -396,7 +396,6 @@ hat = 'colander';
                     </div>
                 </section>
 
-
                 <section data-state="functions-intro">
                     <h2><strong>ES6</strong> Functions</h2>
                     <img src="img/fgx.jpg" />
@@ -452,7 +451,7 @@ var app = {
                     <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
-var app = {
+const app = {
     confirmText: 'Are you sure?', 
     init: function() {
         var handleConfirm = (e) => {
@@ -478,24 +477,6 @@ var app = {
                     <div class="twocol">
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
-var add = function(x, y) {
-    return x + y;
-}
-console.log(add(4, 5)); // 9
-                    </code></pre>
-					<pre><code data-trim contenteditable class="javascript">
-// ES6
-var add = (x, y) => x + y;
-console.log(add(4, 5)); // 9
-                    </code></pre>
-                    </div>
-                </section>
-
-                <section data-state="functions-intro">
-                    <h2><i class="highlight fa fa-arrow-right"></i> Arrow Functions</h2>
-                    <div class="twocol">
-					<pre><code data-trim contenteditable class="javascript">
-// ES5
 [1, 2, 3].filter(function(num) {
     return num > 2;
 });
@@ -510,7 +491,7 @@ items.map(function(obj) {
                     </code></pre>
 					<pre class="fragment"><code data-trim contenteditable class="javascript">
 // ES6
-[1, 2, 3].filter(num => num > 2);
+[1, 2, 3].filter((num) => num > 2);
 
 var items = [
     { id: 5, name: 'foo' }, 
