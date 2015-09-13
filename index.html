@@ -715,11 +715,11 @@ let yourHat = { ...hat, id: 6 };
 
                 <section>
                     <h2>Template Strings</h2>
-                    <p>Variable interpolation, multi-line strings & more</p>
+                    <p>Expression interpolation, multi-line strings & more</p>
                 </section>
 
                 <section>
-                    <h2>Variable Interpolation</h2>
+                    <h2>Expression Interpolation</h2>
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
 var hat = {
@@ -751,6 +751,19 @@ var message = 'I doff colander\n' +
 var message = `I doff colander
 my futuristic hat choice
 hangs low in respect`;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>New String Methods</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+var hat = {
+    type: 'colander'
+};
+hat.type.startsWith('col'); // true
+hat.type.startsWith('er'); // true
+hat.type.includes('and'); // true
                     </code></pre>
                 </section>
 
