@@ -696,6 +696,7 @@ let yourHat = { ...hat, id: 6 };
 // hat = { id: 6, type: 'bowler' }
                     </code></pre>
                 </section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
@@ -743,24 +744,6 @@ let yourHat = { ...hat, id: 6 };
 					<p>
 						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
 					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
 				</section>
 
 				<section>
@@ -1008,14 +991,6 @@ Reveal.addEventListener( 'customevent', function() {
 					</ul>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
 			</div>
 
 		</div>
@@ -1031,18 +1006,14 @@ Reveal.addEventListener( 'customevent', function() {
 				controls: true,
 				progress: true,
 				history: true,
-				center: true,
 
 				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
 				]
 			});
 
