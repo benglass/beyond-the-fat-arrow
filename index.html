@@ -331,7 +331,7 @@ $ babel script.js --watch --out-file script-compiled.js
 
                 <section data-state="functions-intro">
                     <h2><strong>ES6</strong> Variables</h2>
-                    <p>The trouble with <strong><code>var</code></strong></p>
+                    <p>Better Late Than Never: <strong><code>let</code></strong> and <strong><code>const</code></strong></p>
                 </section>
 
                 <section data-state="functions-intro">
@@ -377,6 +377,25 @@ let hat = 'colander';
                     </code></pre>
                     </div>
                 </section>
+
+                <section data-state="functions-intro">
+                    <h2>Read-only variables with <strong><code>const</code></strong></h2>
+                    <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var hat = 'bowler';
+hat = 'colander';
+console.log(hat); // 'colander'
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+const hat = 'bowler';
+hat = 'colander'; 
+// Error: hat is read-only
+                    </code></pre>
+                    </div>
+                </section>
+
 
                 <section data-state="functions-intro">
                     <h2><strong>ES6</strong> Functions</h2>
