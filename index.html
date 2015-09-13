@@ -670,6 +670,22 @@ const { type, size = 'M', ...other } = hat;
                 </section>
 
                 <section>
+                    <h2>Object Destructuring for Arguments</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+function doff({ type }) {
+    console.log('I doff my '+type);
+}
+let hat = { 
+    id: 5,
+    type: 'colander'
+};
+doff(hat);
+// I doff my colander
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2>Object.assign</h2>
                     <p>Native $.extends</p>
 					<pre><code data-trim contenteditable class="javascript">
