@@ -506,6 +506,29 @@ items.map(obj => obj.id);
                     <h2>Default Parameters</h2>
                 </section>
 
+
+                <section data-state="functions-intro">
+                    <h2><strong>ES5</strong> Default Parameters</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+function join(parts, separator) {
+    var separator = separator || '-';
+    // Doesnt allow falsy separator like ''
+    return parts.join(separator);
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><strong>ES6</strong> Default Parameters</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+function join(parts, separator = '-') {
+    return parts.join(separator);
+}
+                    </code></pre>
+                </section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
