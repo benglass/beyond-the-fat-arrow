@@ -610,6 +610,43 @@ let hat = {
                     </code></pre>
                 </section>
 
+                <section>
+                    <h2>Object Destructuring</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var hat = {
+    type: 'bowler'
+};
+var type = hat.type;
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let hat = { 
+    type: 'bowler'
+};
+const { type } = hat;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Destructuring with Defaults</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+var hat = {
+    type: 'bowler'
+};
+var type = hat.type;
+var size = hat.size || 'M';
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let hat = { 
+    type: 'bowler'
+};
+const { type, size = 'M' } = hat;
+                    </code></pre>
+                </section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
