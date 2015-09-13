@@ -29,11 +29,14 @@
 		</script>
 
 <style>
+h1 strong, h2 strong, h3 strong {
+    color: #42affa;
+}
 .intro body::after {
     content: '';
     background-image: url(img/colander-hats.png);
     background-size: contain;
-    opacity: 0.15;
+    opacity: 0.08;
     position: absolute;
     top: 0;
     left: 0;
@@ -58,7 +61,7 @@
 			<div class="slides">
 				<section data-state="intro">
 					<h1>The Future is Now</h1>
-                    <h3>Using ES6 in Your<br />Javascript Code Today</h3>
+                    <h3>Using <strong>ES6</strong> in Your<br />Javascript Code Today</h3>
                     <div style="text-align: right; padding-top: 1em;">
                         <h4 style="margin-bottom: 0">Ben Glassman</h4>
                         <p style="margin: 0;">
@@ -415,7 +418,7 @@ Reveal.addEventListener( 'customevent', function() {
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
