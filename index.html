@@ -65,13 +65,28 @@ ul, li { list-style: none; }
 li::before {
     list-style: none;
     font-family: FontAwesome;
-    color: #333;
+    color: #42affa;
+    opacity: 0.25;
     content: '\f061';
     display: inline-block;
     margin-right: 0.25em;
 }
-.reveal .slides section .fragment.visible { opacity: 0.5; }
-.reveal .slides section .current-fragment.visible { color: #42affa; opacity: 1; }
+.reveal .slides section .fragment.visible { opacity: 0.35; }
+.reveal .slides section .current-fragment.visible { color: #fff; opacity: 1; }
+.reveal .question-box { position: relative; }
+.reveal .question-text { font-size: 150%; }
+.reveal .question-mark {
+    position: absolute;
+    text-align: center;
+    opacity: 0.05;
+    font-size: 600%;
+    color: #fff;
+    top: -0.2em;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    line-height: 1em;
+}
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -127,9 +142,51 @@ li::before {
                     </ul>
 				</section>
 
-				<section>
-                    <h2>And You'll Say<br />What is It?</h2>
-				</section>
+                <section>
+                    <h2 class="question-box">
+                        <span class="question-text">
+                            What is<br />
+                            <strong>ES6</strong>
+                        </span>
+                        <span class="question-mark">?</span>
+                    </h2>
+                </section>
+
+                <section>
+                    <h2 class="question-box">
+                        <span class="question-text">
+                            What is<br />
+                            <strong>ES2015</strong>
+                        </span>
+                        <span class="question-mark">?</span>
+                    </h2>
+                </section>
+
+                <section>
+                    <h2 class="question-box">
+                        <span class="question-text">
+                            What is<br />
+                            <strong>ES.Next</strong>
+                        </span>
+                        <span class="question-mark">?</span>
+                    </h2>
+                </section>
+
+                <section>
+                    <h2 style="line-height: 1em;">What is <strong>ES6</strong>?</h2>
+                    <p>
+                        Not a modest set of new APIs like <strong>ES5</strong><br />
+                        <small>Object.create/keys, String.trim, Array.map/reduce/some/forEach, JSON.parse/stringify</small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2 style="line-height: 1em;">What is <strong>ES6</strong>?</h2>
+                    <p>
+                        A radical jump forward kk
+                        <small>Object.create/keys, String.trim, Array.map/reduce/some/forEach</small>
+                    </p>
+                </section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
