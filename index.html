@@ -46,6 +46,20 @@ strong { color: #42affa; }
 .intro .present, .intro .present * {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
 }
+.use-right-now body::after {
+    content: '';
+    background-image: url(img/electronic-superhighway.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: auto 100%;
+    opacity: 0.50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
 .reveal .slides section .fragment.visible { opacity: 0.5; }
 .reveal .slides section .current-fragment.visible { opacity: 1; }
 </style>
@@ -78,13 +92,14 @@ strong { color: #42affa; }
                     </div>
 				</section>
 
-				<section>
-					<h2>Use ES6 Right Now</h2>
+				<section data-state="use-right-now">
+                    <h2 style="color: #fff; text-shadow: 6px 6px 0 #000, -6px -6px 0 #42affa, -6px 6px 0 #fff, 6px -6px 0 #000, 6px 0px 0 #fff, 0 6px #42affa">The Future is Now</h2>
 				</section>
 
 				<section>
-					<h2>Use ES6 Right Now</h2>
+					<h2>The Future is Now</h2>
                     <ul>
+                        <li class="fragment">What is ES6?</li>
                         <li class="fragment">Tooling & Browser Support</li>
                         <li class="fragment">Functions</li>
                         <li class="fragment">Variables</li>
@@ -92,6 +107,10 @@ strong { color: #42affa; }
                         <li class="fragment">Strings</li>
                         <li class="fragment">Classes</li>
                     </ul>
+				</section>
+
+				<section>
+                    <h2>And You'll Say<br />What is It?</h2>
 				</section>
 
 				<!-- Example of nested vertical slides -->
