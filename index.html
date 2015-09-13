@@ -564,6 +564,26 @@ function join(separator = '-', ...parts) {
                     </blockquote>
                 </section>
 
+                <section>
+                    <h2>Object Property Initialization</h2>
+                    <div class="twocol">
+					<pre><code data-trim contenteditable class="javascript">
+var type = 'bowler';
+var hat = {
+    id: uuid(),
+    type: type
+};
+                    </code></pre>
+					<pre><code data-trim contenteditable class="javascript">
+let type = 'bowler';
+let hat = { 
+    type, 
+    id: uuid()
+};
+                    </code></pre>
+                    </div>
+                </section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
