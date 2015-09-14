@@ -929,24 +929,19 @@ myHat.doff();
 		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: false,
 				progress: true,
 				history: true,
 
-				transition: 'fade', // none/fade/slide/convex/concave/zoom
+				transition: 'fade',
 
-				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true }
 				]
 			});
-
 		</script>
 
 	</body>
