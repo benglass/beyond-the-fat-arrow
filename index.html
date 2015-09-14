@@ -841,12 +841,18 @@ myHat.doff();
 // ES6
 class Colander extends Hat {
     constructor() {
-        super(); // mandatory
+        super(); // mandatory before using this
         this.type = 'colander';
+    }
+    // In the future, we doff twice
+    doff() {
+        super.doff();
+        super.doff();
     }
 }
 var myHat = new Colander();
 myHat.doff();
+// I doff my colander
 // I doff my colander
                     </code></pre>
                 </section>
