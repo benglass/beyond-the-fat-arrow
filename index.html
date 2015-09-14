@@ -857,6 +857,42 @@ myHat.doff();
                     </code></pre>
                 </section>
 
+                <section>
+                    <h2><strong>ES5</strong> Prototype Properties</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+function Hat() {
+}
+Hat.prototype = {
+    type: 'generic hat',
+    doff: function() {
+        console.log('I doff my '+this.type);
+    }
+};
+var myHat = new Hat();
+myHat.doff();
+// I doff my generic hat
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><strong>ES7</strong> Class Property Initializers</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+class Hat {
+    type = 'generic hat';
+
+    // guaranteed lexical this
+    doff = () => {
+        console.log('I doff my '+this.type);
+    }
+}
+var myHat = new Hat();
+myHat.doff();
+// I doff my generic hat
+                    </code></pre>
+                </section>
+
 				<section id="themes">
 					<h2>Themes</h2>
 					<p>
