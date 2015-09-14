@@ -786,11 +786,69 @@ hat.type.includes('and'); // true
                 </section>
 
                 <section>
-                    <h2>Classes</h2>
+                    <h2><strong>ES6</strong> Classes</h2>
                     <blockquote>
                         <p>&ldquo;Object-oriented programming is an exceptionally bad idea which could only have originated in California.&rdquo;<p>
                         <p>– Edsger Dijkstra</p>
                     </blockquote>
+                </section>
+
+                <section>
+                    <h2><strong>ES6</strong> Classes</h2>
+                    <p>Syntax mimics <strong>classical</strong> inheritance.</p>
+                    <p>Implementation is <strong>prototypical</strong> inheritance.</p>
+                </section>
+
+                <section>
+                    <h2><strong>ES5</strong> Classes</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES5
+function Hat() {
+    this.type = 'generic hat';
+}
+Hat.prototype = {
+    doff: function() {
+        console.log('I doff my '+this.type);
+    }
+};
+var myHat = new Hat();
+myHat.doff();
+// I doff my generic hat
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><strong>ES6</strong> Classes</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+class Hat {
+    constructor() {
+        this.type = 'generic hat';
+    }
+    doff() {
+        console.log('I doff my '+this.type);
+    }
+}
+var myHat = new Hat();
+myHat.doff();
+// I doff my generic hat
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Inheritance</h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+class Colander extends Hat {
+    constructor() {
+        super(); // mandatory
+        this.type = 'colander';
+    }
+}
+var myHat = new Colander();
+myHat.doff();
+// I doff my colander
+                    </code></pre>
                 </section>
 
 				<section id="themes">
