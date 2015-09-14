@@ -755,6 +755,28 @@ hangs low in respect`;
                 </section>
 
                 <section>
+                    <h2>
+                        <strong>Tagged Template Strings</strong><br />
+                        <small>Custom Processing Logic</small>
+                    </h2>
+					<pre><code data-trim contenteditable class="javascript">
+// ES6
+let varDump = function(strings, ...values) {
+    const parts = values.map((v, i) => {
+       return `${strings[i]}${typeof v}(${v})`;
+    });
+    return parts.join('');
+};
+let hat = {
+  id: 5,
+  type: 'colander'
+};
+console.log(varDump`Hat id ${hat.id} is a ${hat.type}`);
+// "Hat id number(5) is a string(colander)"
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2>New String Methods</h2>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
