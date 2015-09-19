@@ -699,6 +699,14 @@ let yourHat = Object.assign({}, hat, { id: 6 });
                 </section>
 
                 <section>
+                    <h2><strong>ES7</strong> Features</h2>
+                    <p>Babel also supports some ES7 features<br />with the same browser support!</p>
+                    <pre><code data-trim class="shell">
+$ babel script.js --optional es7.objectRestSpread
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2><strong>ES7</strong> Spread Properties</h2>
                     <p>Sugar for Object.assign</p>
 					<pre><code data-trim contenteditable class="javascript">
@@ -910,6 +918,7 @@ myHat.doff();
 		<section>
                     <h2>Use <strong>ES6</strong> Today</h2>
 		    <ul>
+			<li>Its <strong>framework agnostic</strong></li>
 			<li>Easy <strong>browser support</strong> with Babel</li>
 			<li>Improves code <strong>readability</strong> (const, object destructuring)</li>
 			<li>Decrease <strong>bugs</strong> (let/const, arrow functions)</li>
