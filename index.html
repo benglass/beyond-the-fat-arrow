@@ -512,6 +512,8 @@ function join(parts, separator) {
     // Doesnt allow falsy separator like ''
     return parts.join(separator);
 }
+join(['a', 'b', 'c']);
+// 'a-b-c'
                     </code></pre>
                 </section>
 
@@ -522,6 +524,8 @@ function join(parts, separator) {
 function join(parts, separator = '-') {
     return parts.join(separator);
 }
+join(['a', 'b', 'c']);
+// 'a-b-c'
                     </code></pre>
                 </section>
 
@@ -537,6 +541,8 @@ function join(/* separator, part1, part2, partN */) {
     var parts = Array.prototype.slice.call(arguments, 1);
     return parts.join(separator);
 }
+join(',', 'a', 'b', 'c');
+// 'a,b,c'
                     </code></pre>
                 </section>
 
@@ -548,6 +554,8 @@ function join(/* separator, part1, part2, partN */) {
 function join(separator = '-', ...parts) {
     return parts.join(separator);
 }
+join(',', 'a', 'b', 'c');
+// 'a,b,c'
                     </code></pre>
                 </section>
 
