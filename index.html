@@ -639,6 +639,7 @@ var hat = {
 };
 var type = hat.type;
 var size = hat.size || 'M';
+console.log(type, size); // 'bowler', 'M'
                     </code></pre>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
@@ -647,6 +648,7 @@ let hat = {
     type: 'bowler'
 };
 const { type, size = 'M' } = hat;
+console.log(type, size); // 'bowler', 'M'
                     </code></pre>
                 </section>
 
