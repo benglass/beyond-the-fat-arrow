@@ -590,7 +590,7 @@ console.log(hat.type);
                 </section>
 
                 <section>
-                    <h2>Object Method Initialization</h2>
+                    <h2><strong>ES5</strong> Object Method Initialization</h2>
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
 var type = 'bowler';
@@ -602,6 +602,9 @@ var hat = {
     }
 };
                     </code></pre>
+                </section>
+                <section>
+                    <h2><strong>ES6</strong> Object Method Initialization</h2>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
 let type = 'bowler';
@@ -617,6 +620,7 @@ let hat = {
 
                 <section>
                     <h2>Object Destructuring</h2>
+                    <div class="twocol">
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
 var hat = {
@@ -635,10 +639,12 @@ let hat = {
 const { type } = hat;
 console.log(type); // 'bowler'
                     </code></pre>
+                    </div>
                 </section>
 
                 <section>
                     <h2>Object Destructuring<br /><small>with Defaults</small></h2>
+                    <div class="twocol">
 					<pre><code data-trim contenteditable class="javascript">
 // ES5
 var hat = {
@@ -647,7 +653,8 @@ var hat = {
 };
 var type = hat.type;
 var size = hat.size || 'M';
-console.log(type, size); // 'bowler', 'M'
+console.log(type, size); 
+// 'bowler', 'M'
                     </code></pre>
 					<pre><code data-trim contenteditable class="javascript">
 // ES6
@@ -656,8 +663,10 @@ let hat = {
     type: 'bowler'
 };
 const { type, size = 'M' } = hat;
-console.log(type, size); // 'bowler', 'M'
+console.log(type, size); 
+// 'bowler', 'M'
                     </code></pre>
+                    </div>
                 </section>
 
                 <section>
