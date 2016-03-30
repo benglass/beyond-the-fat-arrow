@@ -213,7 +213,7 @@ var characters = [
 ];
 var characterIds = characters.map(get); // ?!@#
                     </code></pre>
-                    <p>That was pointless!</p>
+                    <p class="fragment">That was pointless!</p>
                 </section>
 
                 <section>
@@ -231,25 +231,8 @@ var characters = [
 ];
 var characterIds = characters.map(getId);
                     </code></pre>
-                    <p>Manual and quite ugly.<br />
+                    <p class="fragment">Manual and quite ugly.<br />
                     Wouldn't it be nice if we had a way to easily<br />transform get into getName?</p>
-                </section>
-
-                <section>
-                    <p>Step 1: Parameterize the Property Name</p>
-					<pre><code data-trim contenteditable class="javascript">
-function get(propName, object) {
-    return object[propName];
-}
-var characters = [
-    {id: 1, name: 'Arrow'},
-    {id: 2, name: 'Oblio'},
-];
-var characterIds = characters.map(function(character) {
-    return get('id', character);
-});
-                    </code></pre>
-                    <p>That was pointless!</p>
                 </section>
 
                 <section>
@@ -286,8 +269,23 @@ var characters = [
 ];
 var characterIds = characters.map(get('id'));
                     </code></pre>
+                    <p class="fragment">Better, but writing nested functions is tedious...</p>
                 </section>
 
+                <section>
+                    <p>What is the Relationship between these 2 functions?</p>
+					<pre><code data-trim contenteditable class="javascript">
+function get(propName, object) {
+    return object[propName];
+}
+
+function get(propName) {
+    return function(object) {
+        return object[propName];
+    };
+}
+                    </code></pre>
+                </section>
 
                 <section>
                     <h2 style="line-height: 1em;">What is <strong>ES5</strong>?</h2>
