@@ -275,16 +275,17 @@ var characterIds = characters.map(get('id'));
                 <section>
                     <p>What is the Relationship between these 2 functions?</p>
 					<pre><code data-trim contenteditable class="javascript">
-function get(propName, object) {
+function getA(propName, object) {
     return object[propName];
 }
 
-function get(propName) {
+function getB(propName) {
     return function(object) {
         return object[propName];
     };
 }
                     </code></pre>
+                    <p class="fragment">getB takes getA's first argument (propName) and returns a function that takes getA's second argument (object) and returns getA(propName, object)</p>
                 </section>
 
                 <section>
