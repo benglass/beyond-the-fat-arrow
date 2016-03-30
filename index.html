@@ -394,6 +394,22 @@ function curriedGet(propName) {
                 </section>
 
                 <section>
+                    <p>Final Get Function</p>
+					<pre><code data-trim contenteditable class="javascript">
+const get = curry(function get(propName, obj) {
+    return obj[propName];
+});
+
+var characters = [
+    {id: 3, name: 'The Count'},
+    {id: 4, name: 'The Pointed Man'},
+];
+
+var characterIds = characters.map(get('id'));
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2 style="line-height: 1em;">What is <strong>ES5</strong>?</h2>
                     <p>
                         A <strong>modest</strong> set of new APIs for existing types<br />
