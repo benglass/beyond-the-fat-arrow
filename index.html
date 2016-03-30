@@ -295,15 +295,47 @@ function getA(propName, object) {
     return object[propName];
 }
 
-function ???(getA) {
-    return function(arg1) {
-        return function(arg2) {
-            return getA(arg1, arg2);
-        };
+function ???(getA, arg1) {
+    return function(arg2) {
+        return getA(arg1, arg2);
     };
 }
                     </code></pre>
                     <p class="fragment">What do we call it?</p>
+                </section>
+
+                <section>
+                    <h2>Left Apply</h2>
+                    <p><strong>Partial Application</strong>: Application is calling a function with arguments, partial refers to the fact that we dont have all the arguments yet</p>
+					<pre><code data-trim contenteditable class="javascript">
+function get(propName, object) {
+    return object[propName];
+}
+
+function leftApply(fn, arg1) {
+    return function(arg2) {
+        return fn(arg1, arg2);
+    };
+}
+
+const getId = leftApply(get, 'id');
+
+characters.map(getId);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>There is Another Name...</h2>
+                    <p>Javascript supports partial application natively.</p>
+					<pre><code data-trim contenteditable class="javascript">
+function get(propName, object) {
+    return object[propName];
+}
+
+const getId = get.bind(null, 'id');
+
+characters.map(getId);
+                    </code></pre>
                 </section>
 
                 <section>
