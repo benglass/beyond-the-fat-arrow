@@ -1,5 +1,5 @@
-# The Future is Now
+# Beyond the Fat Arrow
 
-## Using ES6 in Your Javascript Code Today
+## Functional Programming in Javascript
 
-http://benglass.github.io/es6-the-future-is-now
+http://benglass.github.io/beyond-the-fat-arrow
