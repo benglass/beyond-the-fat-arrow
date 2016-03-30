@@ -378,6 +378,22 @@ getName(character);  // 'Rock Man'
                 </section>
 
                 <section>
+                    <p>Our get function from earlier was a curried function:</p>
+					<pre><code data-trim contenteditable class="javascript">
+function get(propName, obj) { 
+    return obj[propName];
+}
+
+function curriedGet(propName) { 
+    return function(obj) { 
+        return obj[propName];
+     }; 
+}
+                    </code></pre>
+                    <p>Curried functions accept 1 argument at a time. You call the returned function with the next argument, etc. When the final argument is supplied, the function is called and the value is returned.</p>
+                </section>
+
+                <section>
                     <h2 style="line-height: 1em;">What is <strong>ES5</strong>?</h2>
                     <p>
                         A <strong>modest</strong> set of new APIs for existing types<br />
