@@ -273,6 +273,23 @@ var characterIds = characters.map(function(character) {
                 </section>
 
                 <section>
+                    <p>Step 3: Make get return a function</p>
+					<pre><code data-trim contenteditable class="javascript">
+function get(propName) {
+    return function(object) {
+        return object[propName];
+    };
+}
+var characters = [
+    {id: 1, name: 'Arrow'},
+    {id: 2, name: 'Oblio'},
+];
+var characterIds = characters.map(get('id'));
+                    </code></pre>
+                </section>
+
+
+                <section>
                     <h2 style="line-height: 1em;">What is <strong>ES5</strong>?</h2>
                     <p>
                         A <strong>modest</strong> set of new APIs for existing types<br />
