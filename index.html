@@ -117,6 +117,9 @@ li::before {
 .reveal small {
     vertical-align: middle;
 }
+
+.hl1 { color: #FA7921; }
+.hl2 { color: #9BC53D; }
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -149,7 +152,7 @@ li::before {
                 <section>
                     <h2>Why <strong>Functional</strong> Programming?</h2>
                     <blockquote>
-                        <p>&ldquo;Write programs that do one thing and do it well. Write programs to work together.&rdquo;</p>
+                        <p>&ldquo;Write <del>programs</del> functions that do one thing and do it well. Write <del>programs</del> functions to work together.&rdquo;</p>
                         <p>– Doug McIlroy, inventor of UNIX pipes</p>
                     </blockquote>
 				</section>
@@ -157,7 +160,7 @@ li::before {
 				<section>
                     <h2>Why <strong>Functional</strong> Programming?</h2>
                     <ul>
-                        <li class="fragment">Smaller units of code are....</li>
+                        <li>Smaller units of code are....</li>
                         <li class="fragment">...easier to understand</li>
                         <li class="fragment">...easier to test</li>
                         <li class="fragment">...easier to re-use</li>
@@ -168,11 +171,21 @@ li::before {
                 <section>
                     <h2 class="question-box">
                         <span class="question-text">
-                            What is<br />
-                            <strong>ES5</strong>
+                            Great,<br />
+                            <small>but</small> <strong>How</strong>
                         </span>
                         <span class="question-mark">?</span>
                     </h2>
+                </section>
+
+                <section>
+                    <p>To achieve our goal, we need to do 2 things:</p>
+                    <ol>
+                        <li><strong class="hl1">Break</strong> our program into small units</li>
+                        <li><strong class="hl2">Combine</strong> these units into larger ones</li>
+                    </ol>
+                    <p>This talk looks at techniques for<br />
+                    <strong class="hl1">de-composition</strong> and <strong class="hl2">composition</strong>.</p>
                 </section>
 
                 <section>
