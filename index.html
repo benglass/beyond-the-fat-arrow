@@ -340,13 +340,41 @@ characters.map(getId);
 
                 <section>
                     <h2>Partial Application</h2>
-                    <p>Allows us to write our function normally (immediately evaluation) and have the returning of nested functions handled automatically.</p>
+                    <p>Allows us to write our function normally (immediately evaluating) and have the returning of nested functions handled automatically.</p>
+                    <p>leftApply (and its corrolary rightApply) helps us to decompose a function into a simpler function by supplying one of its arguments up front.</p>
                 </section>
 
                 <section>
                     <h2>Higher Order Functions</h2>
                     <p>Left apply is an example of a higher order function.</p>
                     <p>Higher Order functions are functions accept a function as an argument OR returns a function as a value.</p>
+                    <p>We can write higher order functions to transform other functions.</p>
+                </section>
+
+                <section>
+                    <h2>Which is more Readable?</h2>
+					<pre><code data-trim contenteditable class="javascript">
+characters.map(leftApply(get, 'id'));
+
+characters.map(get('id'));
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Currying</h2>
+                    <p>A technique which turns a function of <strong>arity</strong> X of into a nested series of X <strong>unary</strong> (single argument) functions.</p>
+					<pre><code data-trim contenteditable class="javascript">
+var character = { id: 5, name: 'Rock Man' };
+
+get('name', character); // 'Rock Man'
+
+var curriedGet = curry(get);
+
+curriedGet('name')(character);  // 'Rock Man'
+
+var getName = curriedGet('name');
+getName(character);  // 'Rock Man'
+                    </code></pre>
                 </section>
 
                 <section>
