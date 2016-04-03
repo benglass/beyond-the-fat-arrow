@@ -459,6 +459,7 @@ var characterIds = getIds(characters);
                 </section>
 
                 <section>
+                    <h2>What Makes the *NIX command line so powerful?</h2>
 					<pre><code data-trim contenteditable class="shell">
 # Edit the result of a command in vim
 du -h /var | sort -hr | head -10 | vim -
@@ -471,7 +472,6 @@ vim $(git status -uno --porcelain | awk '{ print $2 }')
                     </code></pre>
                 </section>
 
-
                 <section>
                     <h2>What Makes the *NIX command line so powerful?</h2>
                     <ul>
@@ -483,14 +483,40 @@ vim $(git status -uno --porcelain | awk '{ print $2 }')
 
                 <section>
                     <h2>LOG BEFORE ADD: NAIVE HARDCODED</h2>
+					<pre><code data-trim contenteditable class="shell">
+function logBeforeAdd(x, y) {
+    console.log(x, y);
+    return add(x, y);
+}
+                    </code></pre>
                 </section>
 
                 <section>
                     <h2>LOG BEFORE ADD: LOG BEFORE FN</h2>
+					<pre><code data-trim contenteditable class="shell">
+function logBefore(fn) {
+    return function() {
+        var args = Array.from(arguments);
+        console.log(args);
+        return fn.apply(null, args);
+    };
+}
+                    </code></pre>
+                    <p class="fragment">What is the behavior of the logBefore fn?</p>
                 </section>
 
                 <section>
                     <h2>LOG BEFORE ADD: LOG BEFORE FN THIS IS DECORATOR</h2>
+                    <p>A <strong>decorator</strong> is a higher order function that takes one function as its argument and returns a new function that has a relationship to the original function</p>
+					<pre><code data-trim contenteditable class="shell">
+function logBefore(fn) {
+    return function() {
+        var args = Array.from(arguments);
+        console.log(args);
+        return fn.apply(null, args);
+    }
+}
+                    </code></pre>
                 </section>
 
                 <section>
