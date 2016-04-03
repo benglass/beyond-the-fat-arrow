@@ -463,11 +463,8 @@ var characterIds = getIds(characters);
 # Edit the result of a command in vim
 du -h /var | sort -hr | head -10 | vim -
 
-# Show most popular history entries
-history \
-    | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' \
-    | sort -rn \
-    | head
+# Create a file and edit it
+touch myfile.txt && vim $_
 
 # Open modified files in vim
 vim $(git status -uno --porcelain | awk '{ print $2 }') 
