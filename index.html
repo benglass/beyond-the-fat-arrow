@@ -120,6 +120,20 @@ li::before {
 
 .hl1 { color: #FA7921; }
 .hl2 { color: #9BC53D; }
+
+.pipes body::after {
+    content: '';
+    background-image: url(img/thepoint-pipes.jpg);
+    background-size: contain;
+    background-position: center center;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
 </style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -438,6 +452,25 @@ var characterIds = getIds(characters);
                     <p>We can also use functions that create new functions by <strong class="hl2">combining</strong> existing functions.</p>
                     <p>This makes sense when we think of functions as values in the same way as we think of numbers or strings as values. We can perform operations on them to combine or transform them and create new values.</p>
                 </section>
+
+                <section data-state="pipes">
+                    <h2>What Makes the *NIX command line so powerful?</h2>
+                    <div style="height: 400px"></div>
+                </section>
+
+                <section>
+					<pre><code data-trim contenteditable class="shell">
+# Edit the result of a command in vim
+du -h /var | sort -hr | head -10 | vim -
+
+# Show most popular history entries
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+
+# Open modified files in vim
+vim $(git status -uno --porcelain | awk '{ print $2 }') 
+                    </code></pre>
+                </section>
+
 
                 <section>
                     <h2>What Makes the *NIX command line so powerful?</h2>
