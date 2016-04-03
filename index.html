@@ -641,20 +641,29 @@ const logBeforeClick = logBefore(handleClick);
                 </section>
 
                 <section>
-                    <h2>More Combinators</h2>
+                    <h2>After & Around Combinators</h2>
                     <ul>
                         <li>
                         <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn.
                         </li>
                         <li>
-                            <strong>around(aroundFn, mainFn)</strong> 
+                            <strong>around(aroundFn, mainFn)</strong> Return the result of calling aroundFn with mainFn as the first argument and all other arguments as the remaining arguments. Allows modification of return value from mainFn. before/after can be understood as versions of around.
                         </li>
+                </section>
+
+                <section>
+                    <h2>Provided & Excepting Combinators</h2>
+                    <ul>
                         <li>
                             <strong>provided(predicateFn, mainFn)</strong> predicateFn serves as a guard clause where returning falsy prevents mainFn from being called.
                         </li>
                         <li>
                             <strong>excepting(predicateFn, mainFn)</strong> Inverse of provided, returning truthy from predicateFn will result in an early return.
                         </li>
+                        <li>
+                            <strong>Useful for Guard Clauses</strong>: Useful to create early returns from functions
+                        </li>
+                    </ul>
                 </section>
 
                 <section>
@@ -665,6 +674,10 @@ const logBeforeClick = logBefore(handleClick);
                         </li>
                         <li>
                             <strong>postcondition(conditionFn, exception, mainFn)</strong> Call conditionFn after mainFn and throw exception if it returns false. 
+                        </li>
+                        <li>
+                            <strong>Useful for Enforcing Invariants</strong>:
+                            Can be used to share code that enforces valid values on input and output
                         </li>
                     </ul>
                 </section>
