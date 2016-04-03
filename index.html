@@ -605,10 +605,10 @@ function logBefore(fn) {
                     <h2>Step 1: Parameterize the beforeFn</h2>
 					<pre><code data-trim contenteditable class="javascript">
 const log = console.log.bind(console);
-function before(beforeFn, afterFn) {
+function before(beforeFn, mainFn) {
     return function() {
         beforeFn.apply(this, arguments);
-        return afterFn.apply(this, arguments);
+        return mainFn.apply(this, arguments);
     };
 }
 const logBeforeAdd = before(log, add);
@@ -621,7 +621,7 @@ const logBeforeClick = before(log, handleClick);
                     <h2>Step 2: Curried Before</h2>
 					<pre><code data-trim contenteditable class="javascript">
 const log = console.log.bind(console);
-const before = curry(function before(beforeFn, afterFn) {
+const before = curry(function before(beforeFn, mainFn) {
     return function() {
         beforeFn.apply(this, arguments);
         return fn.apply(this, arguments);
@@ -637,10 +637,51 @@ const logBeforeClick = logBefore(handleClick);
                     <h2><strong>before</strong> is a Combinator</h2>
                     <p>Combinators are functions that create more complex values by combining the provided arguments.</p>
                     <p>We're used to thinking about combining values likes numbers (addition), arrays (concat), or objects (Object.assign), but less so with functions.</p>
-                    <p><strong>before(beforeFn, afterFn)</strong> is a function combinator, a higher order function that create more complex functions by combining other functions.</p>
+                    <p><strong>before(beforeFn, mainFn)</strong> is a function combinator, a higher order function that create more complex functions by combining other functions.</p>
                 </section>
 
                 <section>
+                    <h2>More Combinators</h2>
+                    <ul>
+                        <li>
+                            <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn
+                        </li>
+                        <li>
+                            <strong>around(aroundFn, mainFn)</strong> 
+                        </li>
+                        <li>
+                            <strong>provided(predicateFn, mainFn)</strong> If calling predicateFn returns falsy, do not call mainFn.
+                        </li>
+                        <li>
+                            <strong>excepting(predicateFn, mainFn)</strong> Inverse of provided, returning truthy from predicateFn will result in an early return.
+                        </li>
+                </section>
+
+                <section>
+                    <h2>Pre/Post Condition Combinators</h2>
+                    <ul>
+                        <li>
+                            <strong>precondition(conditionFn, exception, mainFn)</strong> Call conditionFn before mainFn and throw exception if it returns false.
+                        </li>
+                        <li>
+                            <strong>postcondition(conditionFn, exception, mainFn)</strong> Call conditionFn after mainFn and throw exception if it returns false. 
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Practical Uses of Decorators & Combinators</h2>
+                    <ul>
+                        <li>
+                            <strong>Separator of Concerns</strong>: Keep cross-cutting concerns like caching, logging, authentication, authorization, etc. separate from application code
+                        </li>
+                        <li>
+                            <strong>Lazy Loading</strong>: before/around can be used to lazily initialize data when it is asked for.
+                        </li>
+                        <li>
+                            <strong>Enforcing Invariants</strong>: Pre/post condition combinators can be used to share code that enforces invariants
+                        </li>
+                    </ul>
                 </section>
 
                 <section>
