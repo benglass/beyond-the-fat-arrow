@@ -482,7 +482,7 @@ vim $(git status -uno --porcelain | awk '{ print $2 }')
                 </section>
 
                 <section>
-                    <h2>LOG BEFORE ADD: NAIVE HARDCODED</h2>
+                    <h2>Adding logging: Naive</h2>
 					<pre><code data-trim contenteditable class="javascript">
 function logBeforeAdd(x, y) {
     console.log(x, y);
@@ -492,7 +492,7 @@ function logBeforeAdd(x, y) {
                 </section>
 
                 <section>
-                    <h2>LOG BEFORE ADD: LOG BEFORE FN</h2>
+                    <h2>Adding logging: Higher Order Function</h2>
 					<pre><code data-trim contenteditable class="javascript">
 function logBefore(fn) {
     return function() {
@@ -505,7 +505,7 @@ function logBefore(fn) {
                 </section>
 
                 <section>
-                    <h2>LOG BEFORE ADD: LOG BEFORE FN THIS IS DECORATOR</h2>
+                    <h2>Logging as a Decorator</h2>
                     <p>A <strong>decorator</strong> is a higher order function that takes one function as its argument and returns a new function that has a relationship to the original function</p>
 					<pre><code data-trim contenteditable class="javascript">
 function logBefore(fn) {
