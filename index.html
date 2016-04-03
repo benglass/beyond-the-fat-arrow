@@ -588,11 +588,49 @@ memoizedAdd(1, 2); // cache hit on: [1,2]
                 </section>
 
                 <section>
-                    <h2>DECORATORS: AOP, RETRY, MEMOIZE</h2>
+                    <h2>Let's Generalize logBefore</h2>
+					<pre><code data-trim contenteditable class="javascript">
+const log = console.log.bind(console);
+function logBefore(fn) {
+    return function() {
+        log(arguments);
+        return fn.apply(this, arguments);
+    };
+}
+                    </code></pre>
+                    <p>How do we make this more re-usable?</p>
                 </section>
 
                 <section>
-                    <h2>BEFORE FN: NO CURRY</h2>
+                    <h2>Step 1: Parameterize the beforeFn</h2>
+					<pre><code data-trim contenteditable class="javascript">
+const log = console.log.bind(console);
+function before(beforeFn, afterFn) {
+    return function() {
+        beforeFn.apply(this, arguments);
+        return afterFn.apply(this, arguments);
+    };
+}
+const logBeforeAdd = before(log, add);
+const logBeforeClick = before(log, handleClick);
+                    </code></pre>
+                    <p class="fragment">Can we make this even more re-usable?</p>
+                </section>
+
+                <section>
+                    <h2>Step 2: Curried Before</h2>
+					<pre><code data-trim contenteditable class="javascript">
+const log = console.log.bind(console);
+const before = curry(function before(beforeFn, afterFn) {
+    return function() {
+        beforeFn.apply(this, arguments);
+        return fn.apply(this, arguments);
+    };
+});
+const logBefore = before(log);
+const logBeforeAdd = logBefore(add);
+const logBeforeClick = logBefore(handleClick);
+                    </code></pre>
                 </section>
 
                 <section>
