@@ -464,7 +464,10 @@ var characterIds = getIds(characters);
 du -h /var | sort -hr | head -10 | vim -
 
 # Show most popular history entries
-history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+history \
+    | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' \
+    | sort -rn \
+    | head
 
 # Open modified files in vim
 vim $(git status -uno --porcelain | awk '{ print $2 }') 
