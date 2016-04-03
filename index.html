@@ -644,13 +644,13 @@ const logBeforeClick = logBefore(handleClick);
                     <h2>More Combinators</h2>
                     <ul>
                         <li>
-                            <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn
+                        <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn.
                         </li>
                         <li>
                             <strong>around(aroundFn, mainFn)</strong> 
                         </li>
                         <li>
-                            <strong>provided(predicateFn, mainFn)</strong> If calling predicateFn returns falsy, do not call mainFn.
+                            <strong>provided(predicateFn, mainFn)</strong> predicateFn serves as a guard clause where returning falsy prevents mainFn from being called.
                         </li>
                         <li>
                             <strong>excepting(predicateFn, mainFn)</strong> Inverse of provided, returning truthy from predicateFn will result in an early return.
@@ -680,6 +680,9 @@ const logBeforeClick = logBefore(handleClick);
                         </li>
                         <li>
                             <strong>Enforcing Invariants</strong>: Pre/post condition combinators can be used to share code that enforces invariants
+                        </li>
+                        <li>
+                            <strong>Side Effects</strong>: before/after can be used to attach side-effects to otherwise pure functions
                         </li>
                     </ul>
                 </section>
