@@ -483,7 +483,7 @@ vim $(git status -uno --porcelain | awk '{ print $2 }')
 
                 <section>
                     <h2>LOG BEFORE ADD: NAIVE HARDCODED</h2>
-					<pre><code data-trim contenteditable class="shell">
+					<pre><code data-trim contenteditable class="javascript">
 function logBeforeAdd(x, y) {
     console.log(x, y);
     return add(x, y);
@@ -493,7 +493,7 @@ function logBeforeAdd(x, y) {
 
                 <section>
                     <h2>LOG BEFORE ADD: LOG BEFORE FN</h2>
-					<pre><code data-trim contenteditable class="shell">
+					<pre><code data-trim contenteditable class="javascript">
 function logBefore(fn) {
     return function() {
         var args = Array.from(arguments);
@@ -508,7 +508,7 @@ function logBefore(fn) {
                 <section>
                     <h2>LOG BEFORE ADD: LOG BEFORE FN THIS IS DECORATOR</h2>
                     <p>A <strong>decorator</strong> is a higher order function that takes one function as its argument and returns a new function that has a relationship to the original function</p>
-					<pre><code data-trim contenteditable class="shell">
+					<pre><code data-trim contenteditable class="javascript">
 function logBefore(fn) {
     return function() {
         var args = Array.from(arguments);
@@ -516,6 +516,28 @@ function logBefore(fn) {
         return fn.apply(null, args);
     }
 }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Retry Decorator</h2>
+					<pre><code data-trim contenteditable class="javascript">
+function retry(fn, maxTries) {
+    return function() {
+        var error, args = Array.from(arguments);
+        while (maxTries--) {
+            try {
+                return fn.apply(null, args);
+            } catch (err) {
+              error = err;
+            }
+        }
+        throw error;
+    };
+}
+
+const resilientLoadUsers = retry(loadUsers, 3);
+const users = resilientLoadUsers();
                     </code></pre>
                 </section>
 
