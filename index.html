@@ -644,11 +644,30 @@ const logBeforeClick = logBefore(handleClick);
                     <h2>After & Around Combinators</h2>
                     <ul>
                         <li>
-                        <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn.
+                            <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn.
                         </li>
                         <li>
                             <strong>around(aroundFn, mainFn)</strong> Return the result of calling aroundFn with mainFn as the first argument and all other arguments as the remaining arguments. Allows modification of return value from mainFn. before/after can be understood as versions of around.
                         </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Around Example</h2>
+					<pre><code data-trim contenteditable class="shell">
+function around(wrapperFn, mainFn) {
+  return function() {
+    var args = [mainFn].concat(Array.from(arguments));
+    return wrapperFn.apply(this, args);
+  };
+}
+
+const addAndDouble = around(function(mainFn, ...args) {
+  return mainFn(...args) * 2;
+}, add);
+
+addAndDouble(1, 2); // 6
+                    </code></pre>
                 </section>
 
                 <section>
