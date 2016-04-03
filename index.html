@@ -641,19 +641,8 @@ const logBeforeClick = logBefore(handleClick);
                 </section>
 
                 <section>
-                    <h2>After & Around Combinators</h2>
-                    <ul>
-                        <li>
-                            <strong>after(afterFn, mainFn)</strong> Call afterFn prior to returning the result of mainFn.
-                        </li>
-                        <li>
-                            <strong>around(aroundFn, mainFn)</strong> Return the result of calling aroundFn with mainFn as the first argument and all other arguments as the remaining arguments. Allows modification of return value from mainFn. before/after can be understood as versions of around.
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
                     <h2>Around Example</h2>
+                    <p>Return the result of calling aroundFn with mainFn and all other arguments. You can implement many decorators using around.</p>
 					<pre><code data-trim contenteditable class="shell">
 function around(wrapperFn, mainFn) {
   return function() {
@@ -679,9 +668,6 @@ addAndDouble(1, 2); // 6
                         <li>
                             <strong>excepting(predicateFn, mainFn)</strong> Inverse of provided, returning truthy from predicateFn will result in an early return.
                         </li>
-                        <li>
-                            <strong>Useful for Guard Clauses</strong>: Useful to create early returns from functions
-                        </li>
                     </ul>
                 </section>
 
@@ -694,18 +680,14 @@ addAndDouble(1, 2); // 6
                         <li>
                             <strong>postcondition(conditionFn, exception, mainFn)</strong> Call conditionFn after mainFn and throw exception if it returns false. 
                         </li>
-                        <li>
-                            <strong>Useful for Enforcing Invariants</strong>:
-                            Can be used to share code that enforces valid values on input and output
-                        </li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Practical Uses of Decorators & Combinators</h2>
+                    <h2>Uses</h2>
                     <ul>
                         <li>
-                            <strong>Separator of Concerns</strong>: Keep cross-cutting concerns like caching, logging, authentication, authorization, etc. separate from application code
+                            <strong>Separator of Concerns</strong>: Separate cross-cutting concerns like caching, logging, authentication, authorization, etc. from application code
                         </li>
                         <li>
                             <strong>Lazy Loading</strong>: before/around can be used to lazily initialize data when it is asked for.
@@ -715,6 +697,9 @@ addAndDouble(1, 2); // 6
                         </li>
                         <li>
                             <strong>Side Effects</strong>: before/after can be used to attach side-effects to otherwise pure functions
+                        </li>
+                        <li>
+                            <strong>Guard Clauses</strong>: Useful to create early returns from functions
                         </li>
                     </ul>
                 </section>
