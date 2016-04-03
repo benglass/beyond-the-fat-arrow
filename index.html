@@ -588,6 +588,28 @@ memoizedAdd(1, 2); // cache hit on: [1,2]
                 </section>
 
                 <section>
+                    <h2>Chaining Functions w/ Pipe</h2>
+					<pre><code data-trim contenteditable class="javascript">
+function uppercase(string) {
+    return string.toUpperCase();
+}
+function pipe() {
+    const functionQueue = Array.from(arguments);
+    return function() {
+        const initialValue = arguments[0];
+        return functionQueue
+            .reduce(function(returnValue, fn) {
+                return fn(returnValue);
+            }, initialValue);
+    }
+}
+
+const getUppercaseName = pipe(get('name'), uppercase);
+const uppercaseNames = characters.map(getUppercaseName);
+                    </code></pre>
+                </section>
+
+                <section>
                     <h2>Let's Generalize logBefore</h2>
 					<pre><code data-trim contenteditable class="javascript">
 const log = console.log.bind(console);
