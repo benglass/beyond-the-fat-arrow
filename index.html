@@ -607,6 +607,7 @@ function pipe() {
 const getUppercaseName = pipe(get('name'), uppercase);
 const uppercaseNames = characters.map(getUppercaseName);
                     </code></pre>
+                    <p>compose = flip(pipe);</p>
                 </section>
 
                 <section>
