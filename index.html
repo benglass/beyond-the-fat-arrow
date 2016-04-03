@@ -496,9 +496,8 @@ function logBeforeAdd(x, y) {
 					<pre><code data-trim contenteditable class="javascript">
 function logBefore(fn) {
     return function() {
-        var args = Array.from(arguments);
-        console.log(args);
-        return fn.apply(null, args);
+        console.log(arguments);
+        return fn.apply(this, arguments);
     };
 }
                     </code></pre>
@@ -511,9 +510,8 @@ function logBefore(fn) {
 					<pre><code data-trim contenteditable class="javascript">
 function logBefore(fn) {
     return function() {
-        var args = Array.from(arguments);
-        console.log(args);
-        return fn.apply(null, args);
+        console.log(arguments);
+        return fn.apply(this, arguments);
     }
 }
                     </code></pre>
@@ -524,10 +522,10 @@ function logBefore(fn) {
 					<pre><code data-trim contenteditable class="javascript">
 function retry(fn, maxTries) {
     return function() {
-        var error, args = Array.from(arguments);
+        var error;
         while (maxTries--) {
             try {
-                return fn.apply(null, args);
+                return fn.apply(this, arguments);
             } catch (err) {
               error = err;
             }
@@ -538,6 +536,28 @@ function retry(fn, maxTries) {
 
 const resilientLoadUsers = retry(loadUsers, 3);
 const users = resilientLoadUsers();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Memoize Decorator</h2>
+					<pre><code data-trim contenteditable class="javascript">
+function memoize(fn) {
+    var memos = {};
+    return function() {
+        var key = JSON.stringify(Array.from(arguments));
+        if (!memos.hasOwnProperty(key)) { 
+            console.log('cache miss on: '+key);
+            memos[key] = fn.apply(this, arguments);
+        } else {
+            console.log('cache hit on: '+key);
+        }
+        return memos[key];
+    };
+};
+const memoizedAdd = memoize(add);
+memoizedAdd(1, 2); // cache miss on: [1,2]
+memoizedAdd(1, 2); // cache hit on: [1,2]
                     </code></pre>
                 </section>
 
