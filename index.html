@@ -596,10 +596,10 @@ function pipe() {
     const functionQueue = Array.from(arguments);
     return function() {
         const initialValue = arguments[0];
-        return functionQueue
-            .reduce(function(returnValue, fn) {
-                return fn(returnValue);
-            }, initialValue);
+        return functionQueue.reduce(
+            (returnValue, fn) => return fn(returnValue),
+            initialValue
+        );
     }
 }
 
